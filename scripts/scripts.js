@@ -3,6 +3,7 @@ const menu_list = document.getElementById('menu-list');
 const about_company_allInform = document.getElementById('about_company_allInform');
 const from_company = document.getElementById('from_company');
 const modal = document.getElementById('modal');
+const button_fromTheCompany = document.getElementById('button_fromTheCompany');
 
 function translateX(bolean) {
   console.log(1)
@@ -43,7 +44,9 @@ const openn_window_from_company = (e) => {
 
 from_company.addEventListener('click', openn_window_from_company);
 
-modal.addEventListener('click', openn_window_from_company)
+modal.addEventListener('click', openn_window_from_company);
+
+button_fromTheCompany.addEventListener('click', openn_window_from_company);
 
 
 $(function () {
