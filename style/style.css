@@ -364,15 +364,16 @@ footer {
   position: fixed;
   max-width: 1080px;
   height: 80vh;
-  background-color: #404040;
+  background-color: #fff;
   z-index: 50;
   margin-top: 50px;
-  color: #fff;
+  color: #000;
   overflow: auto;
   padding: 10px;
   text-overflow: ellipsis;
   display: none;
   flex-direction: column;
+  font-size: 1.2rem;
 }
 
 #block2 > ul > li {
