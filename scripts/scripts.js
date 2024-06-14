@@ -35,6 +35,7 @@ function handleCheckboxChange(e) {
 document.addEventListener('click', handleCheckboxChange);
 
 const openn_window_from_company = (e) => {
+  console.log(1)
   if (about_company_allInform.classList[1] !== 'activ') {
     about_company_allInform.classList.add('activ');
   } else {

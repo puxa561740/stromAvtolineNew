@@ -33,8 +33,6 @@ ul {
 
 /* Выставляем основные настройки по-умолчанию для body */
 body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   display: flex;
@@ -49,6 +47,7 @@ header {
     align-items: center;
     justify-content: center;
     width: 100%;
+    position: sticky;
 }
 
 section,
@@ -237,16 +236,6 @@ a {
   height: 100%;
 }
 
-footer {
-  background-color: #404040;
-  color: #fff;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 150px;
-}
-
 .burger-checkbox {
   visibility: hidden;
 }
@@ -309,7 +298,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 37px;
+    margin-top: 70px;
     background: #404040;
     transform: translateX(-100%);
     transition: .3s;
@@ -374,6 +363,8 @@ footer {
   display: none;
   flex-direction: column;
   font-size: 1.2rem;
+  border: 2px solid #000;
+  box-shadow: 0px 0px 60px 60px;
 }
 
 #block2 > ul > li {
@@ -493,28 +484,123 @@ footer {
   margin: 35px;
 }
 
-#button_fromTheCompany {
-  cursor: pointer;
-  width: 200px;
-  height: 50px;
-  color: #ff0707;
-  text-transform: uppercase;
-  font-size: larger;
-  margin: 15px 0;
-}
-
 #block4 {
   padding: 10px;
+  position: relative;
+  padding: 0 0 100px 0;
+}
+
+.button_fromTheCompany {
+    text-transform: uppercase;
+    padding: 20px 40px;
+    top: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    transition: all .2s;
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.button_fromTheCompany:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.button_fromTheCompany-white {
+    background-color: #fff;
+    color: #777;
+}
+
+.button_fromTheCompany::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+.button_fromTheCompany:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBottom 5s ease-out;
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }
 
 .logo_sp {
   border-radius: 50%;
   background-color: rgb(5, 255, 5);
-  height: 50px;
-  width: 50px;
+  height: 45px;
+  width: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #000;
   font-size: 2rem;
+  margin: 10px 0;
+}
+
+#footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #7a7a7a;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 20px;
+}
+
+a[href^="tel:"],
+a[href^="mailto:"] {
+  border: 1 px solid red;
+  width: max-content;
+  padding: 2px;
+}
+
+a[href^="tel:"]:hover,
+a[href^="mailto:"]:hover {
+  box-shadow: 0 0 5px 5px black;
+}
+
+
+#footer > div.footer_kontakts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+
+@media (max-width: 1360px) {
+  section#block1 {
+    flex-wrap: wrap;
+  }
 }
