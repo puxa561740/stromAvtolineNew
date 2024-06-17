@@ -16,6 +16,7 @@ img {
   justify-content: space-between;
   transition: all .5s ease-in-out;
   transform: translateZ(0); 
+  width: 100%;
 }
   .gallery.pop {
     filter: blur(10px); 
