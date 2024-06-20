@@ -43,7 +43,7 @@ const openn_window_from_company = (e) => {
   }
 };
 
-// from_company.addEventListener('click', openn_window_from_company);
+from_company.addEventListener('click', openn_window_from_company);
 
 modal.addEventListener('click', openn_window_from_company);
 
