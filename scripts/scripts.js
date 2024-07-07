@@ -4,9 +4,9 @@ const about_company_allInform = document.getElementById('about_company_allInform
 const from_company = document.getElementById('from_company');
 const modal = document.getElementById('modal');
 const button_fromTheCompany = document.getElementById('button_fromTheCompany');
+const checkBox = document.getElementById('burger') 
 
 function translateX(bolean) {
-  console.log(1)
   if (bolean) {
     menu_list.style = 'transform: translateX(0);';
   } else if (!bolean) {
@@ -15,27 +15,27 @@ function translateX(bolean) {
 };
 
 function handleCheckboxChange(e) {
-  e.stopPropagation()
-  if (e.target.id == "burger-checkbox" && burger_checkbox.checked) {
-    translateX(true, e)
-    // burger_checkbox.checked = !burger_checkbox.checked
-  } else if (!burger_checkbox.checked && e.target.id === "burger-checkbox") {
-    console.log(4)
-    translateX(false, e);
-    // burger_checkbox.checked = !burger_checkbox.checked
-  } else if (e.target.id !== "menu_list" && burger_checkbox.checked) {
-    console.log(burger_checkbox.checked)
-    
-    burger_checkbox.checked = true
-    translateX(false, e);
-    
+  if (e.target.id == "burger" ) {
+    if (!burger_checkbox.checked) {
+      translateX(true);
+    } else {
+      translateX(false);
+    }
+  } else if (e.target.parentNode.parentNode.id == 'menu-list' || e.target.parentNode.id == 'menu-list'
+  ) {
+    console.log(1)
+  } else {
+    burger_checkbox.checked = !burger_checkbox.checked
+    translateX(false);
   }
+  
 };
 
-document.addEventListener('click', handleCheckboxChange);
+checkBox.addEventListener('click', handleCheckboxChange);
+
+menu_list.addEventListener('click', handleCheckboxChange)
 
 const openn_window_from_company = (e) => {
-  console.log(1)
   if (about_company_allInform.classList[1] !== 'activ') {
     about_company_allInform.classList.add('activ');
   } else {
@@ -53,9 +53,9 @@ button_fromTheCompany.addEventListener('click', openn_window_from_company);
 $(function () {
     let header = $('.header');
     let hederHeight = header.height(); // вычисляем высоту шапки
-     
-    $(window).scroll(function() {
-      if($(this).scrollTop() > 1) {
+  $(window).scroll(function () {
+      
+      if($(this).scrollTop() > 0 || $(this).innerWidth() < 1161) {
        header.addClass('header_fixed');
        $('body').css({
           'paddingTop': hederHeight+'px' // делаем отступ у body, равный высоте шапки
