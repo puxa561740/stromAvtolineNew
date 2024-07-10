@@ -55,8 +55,25 @@ img {
   .gallery {
     figure {
       flex-basis: 48%;
+      img {
+        width: 100%;
+      }
     }
   }
+}
+
+@media (max-width: 500px) {
+ .popup {
+  figure {
+    width: 350px;
+    top: 50% !important;
+    left: 82% !important;
+
+    img {
+      width: 100%;
+    }
+  }
+ }
 }
 
 .popup {
@@ -78,13 +95,14 @@ img {
     figure {
       margin-top: 0;
       opacity: 1;
+      
     }
   }
 
   figure {
     position: absolute;
     top: 40%;
-    left: 50%;
+    left: 60%;
     transform: translate(-50%, -50%);
     transform-origin: 0 0;
     margin-top: 30px;
@@ -145,7 +163,7 @@ img {
     cursor: pointer;
     background: url(#close);
     border-radius: 25px;
-    background: rgba(0, 0, 0, .1);
+    background: rgba(255, 6, 6, 0.5);
     box-shadow: 0 0 3px rgba(0, 0, 0, .2);
 
     svg {
