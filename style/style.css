@@ -259,13 +259,13 @@ a {
 
   .burger {
     position: relative;
-    text-align: center;
+    /* text-align: center; */
     z-index: 100;
     cursor: pointer;
     display: flex;
     border: none;
     background: transparent;
-    width: 550px;
+    padding: 0 20px ;
     height: 26px;
     margin: 10px 45%;
   }
@@ -690,6 +690,9 @@ h3 {
 }
 
 @media (max-width: 769px) {
+  body {
+    padding-top: 65px;
+  }
   #slider_sertificats > div.gallery {
     flex-wrap: wrap;
     align-items: center;
@@ -714,7 +717,7 @@ h3 {
   }
 
   .block_main_discription {
-    font-size: 2.7rem;
+    font-size: 2.4rem;
   }
 
   .button_fromTheCompany {
